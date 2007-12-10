@@ -11,7 +11,11 @@ URL: http://gtvg.sourceforge.net/
 License: GPL
 Group: Graphical desktop/GNOME
 BuildRoot: %{_tmppath}/%{name}-buildroot
-#BuildRequires:
+BuildRequires: libgnome2-devel
+BuildRequires: libgnomecanvas2-devel
+BuildRequires: libglade2-devel
+BuildRequires: libnotify-devel
+BuildRequires: intltool
 #Requires:
 
 %description
