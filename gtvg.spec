@@ -53,16 +53,16 @@ rm -rf %{buildroot}/%{_prefix}/doc/%{name}
 %find_lang %{name}
 
 %post
-%{update_menus}
-%{post_install_gconf_schemas} %{name}
-%{update_icon_cache hicolor}
+%update_menus
+%post_install_gconf_schemas %{name}
+%update_icon_cache hicolor
 
 %preun
-%{preun_uninstall_gconf_schemas} %{name}
+%preun_uninstall_gconf_schemas %{name}
 
 %postun
-%{clean_menus}
-%{update_icon_cache hicolor}
+%clean_menus
+%update_icon_cache hicolor
 
 %clean
 rm -rf %{buildroot}
