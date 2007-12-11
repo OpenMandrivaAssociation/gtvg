@@ -16,12 +16,15 @@ BuildRequires: libgnomecanvas2-devel
 BuildRequires: libglade2-devel
 BuildRequires: libnotify-devel
 BuildRequires: intltool
-#Requires:
+Requires: xmltv-grabbers
 
 %description
 Gtvg is a simple TV program schedule viewer, which allows you to quickly see 
 what is on TV at the moment or later, and be reminded of when your favourite 
 shows start.
+
+It uses XMLTV as a backend to grab TV programs, but can be configured to use 
+nxtvepg instead.
 
 %prep
 %setup -q
@@ -35,19 +38,30 @@ shows start.
 rm -rf %{buildroot}
 %makeinstall
 
+desktop-file-install --vendor="" \
+  --remove-category="Utility" \
+  --remove-key="Encoding" \
+  --remove-key="Version" \
+  --remove-key="StartupNotify" \
+  --add-category="X-MandrivaLinux-Multimedia-Video" \
+  --dir %{buildroot}%{_datadir}/applications/ \
+  %{buildroot}%{_datadir}/applications/*
+
 rm -rf %{buildroot}/%{_prefix}/doc/%{name}
 
 %find_lang %{name}
 
 %post
-%post_install_gconf_schemas %{name}
-%update_icon_cache hicolor
+%{update_menus}
+%{post_install_gconf_schemas} %{name}
+%{update_icon_cache hicolor}
 
 %preun
-%preun_uninstall_gconf_schemas %{name}
+%{preun_uninstall_gconf_schemas} %{name}
 
 %postun
-%update_icon_cache hicolor
+%{clean_menus}
+%{update_icon_cache hicolor}
 
 %clean
 rm -rf %{buildroot}
