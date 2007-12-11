@@ -16,6 +16,7 @@ BuildRequires: libgnomecanvas2-devel
 BuildRequires: libglade2-devel
 BuildRequires: libnotify-devel
 BuildRequires: intltool
+BuildRequires: desktop-file-utils
 Requires: xmltv-grabbers
 
 %description
