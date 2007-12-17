@@ -1,6 +1,6 @@
 %define name gtvg
 %define version 0.3
-%define release %mkrel 4
+%define release %mkrel 5
 
 Name: %{name}
 Summary: Gtvg - A Gnome TV Guide
@@ -55,11 +55,11 @@ rm -f %{buildroot}%{_iconsdir}/hicolor/icon-theme.cache
 
 %post
 %update_menus
-%post_install_gconf_schemas %{name}
+%post_install_gconf_schemas "%{name}"
 %update_icon_cache hicolor
 
 %preun
-%preun_uninstall_gconf_schemas %{name}
+%preun_uninstall_gconf_schemas "%{name}"
 
 %postun
 %clean_menus
