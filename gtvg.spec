@@ -1,6 +1,6 @@
 %define name gtvg
 %define version 0.3
-%define release %mkrel 3
+%define release %mkrel 4
 
 Name: %{name}
 Summary: Gtvg - A Gnome TV Guide
@@ -49,6 +49,7 @@ desktop-file-install --vendor="" \
   %{buildroot}%{_datadir}/applications/*
 
 rm -rf %{buildroot}/%{_prefix}/doc/%{name}
+rm -f %{buildroot}%{_iconsdir}/hicolor/icon-theme.cache
 
 %find_lang %{name}
 
