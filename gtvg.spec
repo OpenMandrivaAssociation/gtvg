@@ -10,7 +10,6 @@ Source: http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 URL: http://gtvg.sourceforge.net/
 License: GPL
 Group: Graphical desktop/GNOME
-BuildRoot: %{_tmppath}/%{name}-buildroot
 BuildRequires: libgnome2-devel
 BuildRequires: libgnomecanvas2-devel
 BuildRequires: libglade2-devel
