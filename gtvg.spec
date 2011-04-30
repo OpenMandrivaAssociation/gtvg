@@ -1,12 +1,13 @@
 %define name gtvg
 %define version 0.3
-%define release %mkrel 9
+%define release %mkrel 10
 
 Name: %{name}
 Summary: Gtvg - A Gnome TV Guide
 Version: %{version}
 Release: %{release}
 Source: http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+Patch0: gtvg-0.3-libnotify0.7.patch
 URL: http://gtvg.sourceforge.net/
 License: GPL
 Group: Graphical desktop/GNOME
@@ -17,6 +18,9 @@ BuildRequires: libglade2-devel
 BuildRequires: libnotify-devel
 BuildRequires: intltool
 BuildRequires: desktop-file-utils
+BuildRequires: libsm-devel
+BuildRequires: libice-devel
+BuildRequires: libGConf2-devel GConf2
 Requires: xmltv-grabbers
 
 %description
@@ -29,15 +33,15 @@ nxtvepg instead.
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
-%configure2_5x
-
+%configure2_5x --disable-schemas-install
 %make
 										
 %install
 rm -rf %{buildroot}
-%makeinstall
+%makeinstall_std
 
 desktop-file-install --vendor="" \
   --remove-category="Utility" \
