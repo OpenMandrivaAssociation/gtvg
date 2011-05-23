@@ -1,6 +1,6 @@
 %define name gtvg
 %define version 0.3
-%define release %mkrel 10
+%define release %mkrel 11
 
 Name: %{name}
 Summary: Gtvg - A Gnome TV Guide
