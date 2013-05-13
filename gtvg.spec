@@ -11,14 +11,14 @@ Patch0: gtvg-0.3-libnotify0.7.patch
 URL: http://gtvg.sourceforge.net/
 License: GPL
 Group: Graphical desktop/GNOME
-BuildRequires: libgnome2-devel
-BuildRequires: libgnomecanvas2-devel
+BuildRequires: pkgconfig(libgnome-2.0)
+BuildRequires: pkgconfig(libgnomecanvas-2.0)
 BuildRequires: pkgconfig(libglade-2.0)
 BuildRequires: pkgconfig(libnotify)
 BuildRequires: intltool
 BuildRequires: desktop-file-utils
-BuildRequires: libsm-devel
-BuildRequires: libice-devel
+BuildRequires: pkgconfig(sm)
+BuildRequires: pkgconfig(ice)
 BuildRequires: pkgconfig(gconf-2.0) GConf2
 Requires: xmltv-grabbers
 
