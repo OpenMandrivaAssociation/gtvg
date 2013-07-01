@@ -3,7 +3,7 @@
 %define release  12
 
 Name: %{name}
-Summary: Gtvg - A Gnome TV Guide
+Summary: - A Gnome TV Guide
 Version: %{version}
 Release: %{release}
 Source0: http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
