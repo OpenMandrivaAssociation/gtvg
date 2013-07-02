@@ -1,11 +1,7 @@
-%define name gtvg
-%define version 0.3
-%define release  12
-
-Name: %{name}
-Summary: - A Gnome TV Guide
-Version: %{version}
-Release: %{release}
+Name:    gtvg
+Summary: A Gnome TV Guide
+Version: 0.3
+Release: 13
 Source0: http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 Patch0: gtvg-0.3-libnotify0.7.patch
 URL: http://gtvg.sourceforge.net/
@@ -59,7 +55,6 @@ rm -f %{buildroot}%{_iconsdir}/hicolor/icon-theme.cache
 %preun_uninstall_gconf_schemas "%{name}"
 
 %files -f %{name}.lang
-%defattr(-,root,root)
 %doc AUTHORS ChangeLog
 %{_sysconfdir}/gconf/schemas/%{name}.schemas
 %{_bindir}/%{name}
