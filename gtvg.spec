@@ -4,7 +4,7 @@ Version: 0.3
 Release: 13
 Source0: http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 Patch0: gtvg-0.3-libnotify0.7.patch
-URL: http://gtvg.sourceforge.net/
+URL: https://gtvg.sourceforge.net/
 License: GPL
 Group: Graphical desktop/GNOME
 BuildRequires: pkgconfig(libgnome-2.0)
