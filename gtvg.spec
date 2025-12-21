@@ -7,6 +7,11 @@ Patch0: gtvg-0.3-libnotify0.7.patch
 URL: https://gtvg.sourceforge.net/
 License: GPL
 Group: Graphical desktop/GNOME
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires: pkgconfig(libgnome-2.0)
 BuildRequires: pkgconfig(libgnomecanvas-2.0)
 BuildRequires: pkgconfig(libglade-2.0)
